@@ -26,7 +26,8 @@ var getUserRepos = function (user) {
     fetch(apiUrl)
         .then(function(response) {
         if (response.ok) {
-          response.json().then(function(data) {
+          response.json()
+          .then(function(data) {
             displayRepos(data, user);
           });
         } else {
@@ -49,8 +50,8 @@ let displayRepos = function (repos, searchTerm) {
     //clear old content
     repoContainerEl.textContent = "";
     repoSearchTerm.textContent = searchTerm;
-    console.table(repos);
-    console.log(searchTerm);
+    console.log(repos);
+    console.table(searchTerm);
     //create a status element
     let statusEl = document.createElement("span");
     statusEl.classList = "flex-row align-center";
